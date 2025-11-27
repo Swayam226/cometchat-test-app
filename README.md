@@ -1,73 +1,76 @@
-# React + TypeScript + Vite
+# CometChat UI Kit Implementation – Internship Task
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains my implementation of the CometChat React UI Kit generated using the UI Kit Builder. The goal was to explore the CometChat dashboard, generate a UI Kit, integrate it into a React project, and run it locally.
 
-Currently, two official plugins are available:
+## 🔧 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React + Vite
+- TypeScript
+- CometChat React UI Kit
+- CometChat Chat SDK
+- Node.js + npm
 
-## React Compiler
+## Project Setup
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 1. Install dependencies
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+![Chat Interface](image.png)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## CometChat Configuration
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+The CometChat setup is done in `main.tsx` using:
+
+- **APP_ID**
+- **REGION**
+- **AUTH_KEY**
+
+All values are taken from the CometChat dashboard.
+
+---
+
+## User Setup
+
+Users must be created in the CometChat dashboard before they appear inside the UI Kit.
+
+Navigate to:
+
+**Dashboard → Users → Create User**
+
+Create users such as:
+
+- user1
+- user2
+- test01
+
+![Users List](image-1.png)
+
+---
+
+## 🧪 What Works
+
+- UI Kit renders correctly
+- Users list loads after user creation
+- Chat UI, components, and layout work as expected
+- Vite reload & performance are smooth
+- UIKit initialization succeeds after proper configuration
+
+![Chat Screen](image-2.png)
+
+## Project Structure
+
+cometchat-test-app/
+│
+├── src/
+│ ├── CometChat/
+│ ├── components/
+│ ├── context/
+│ ├── utils/
+│ └── App.tsx
+│
+├── index.html
+├── package.json
+└── vite.config.ts
