@@ -16,6 +16,7 @@ This repository contains my implementation of the CometChat React UI Kit generat
 
 ```bash
 npm install
+npm run dev
 ```
 
 ![Chat Interface](image.png)
@@ -59,18 +60,3 @@ Create users such as:
 - UIKit initialization succeeds after proper configuration
 
 ![Chat Screen](image-2.png)
-
-## Project Structure
-
-cometchat-test-app/
-│
-├── src/
-│ ├── CometChat/
-│ ├── components/
-│ ├── context/
-│ ├── utils/
-│ └── App.tsx
-│
-├── index.html
-├── package.json
-└── vite.config.ts
